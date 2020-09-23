@@ -1,13 +1,19 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./assets/css/App.css";
+import { theme, Divider } from "./assets/css/App.css";
 import { Container } from "./layouts";
+import { Navbar } from "./views";
+import DataState from "./context/State";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Container>
-      </Container>
+      <DataState>
+        <Container>
+          <Navbar theme={theme} />
+          <Divider />
+        </Container>
+      </DataState>
     </ThemeProvider>
   );
 }

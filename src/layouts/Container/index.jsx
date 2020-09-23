@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Container = ({ children }) => {
     const StyledContainer = styled.div`
         display: flex;
+        flex-direction: column;
         width: 370px;
         margin: auto;
     `;

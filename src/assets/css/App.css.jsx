@@ -1,4 +1,9 @@
+import styled from "styled-components";
+
 export const theme = {
+  white: "#FFF",
+  black: "#000",
+
   addButton: "#f9423a",
   cartButton: "#a23530",
 
@@ -11,6 +16,7 @@ export const theme = {
   fontSize: ["8px", "12px", "14px", "16px", "20px"],
 
   spacing: [
+    "0px",
     "4px",
     "8px",
     "16px",
@@ -27,3 +33,8 @@ export const theme = {
     "24rem",
   ],
 };
+
+export const Divider = styled.hr`
+    width: 100%;
+    border-top: 0.2px solid ${props => props.theme.outline};
+`;
