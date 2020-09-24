@@ -2,6 +2,7 @@
   "name": "kulina-pretest",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rizk19.github.io/52de5a0f22001b919bf98a1fad00fde8c38be9de/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
