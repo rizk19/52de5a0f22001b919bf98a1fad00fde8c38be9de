@@ -18,7 +18,7 @@ const Datas = (props) => {
     dateTime: null,
     eatTime: "Lunch",
     location: false,
-    locationItem: null,
+    locationItem: "Tokopedia Tower",
     cart: false,
     cartItem: {
       quantity: 0,

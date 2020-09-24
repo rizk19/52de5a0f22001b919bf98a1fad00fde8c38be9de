@@ -6,7 +6,8 @@ import DataContext from "../../../../context/Context";
 const Header = (props) => {
     const dataContext = useContext(DataContext);
     const {
-        HandleLocation
+        HandleLocation,
+        locationItem
     } = dataContext;
     const { theme } = props;
 
@@ -25,8 +26,8 @@ const Header = (props) => {
                 <StyledSubtitle>ALAMAT PENGANTARAN</StyledSubtitle>
                 <StyledTitle>
                     <StyledTitleText>
-                        Tokopedia Tower
-                </StyledTitleText>
+                        {locationItem}
+                    </StyledTitleText>
                     <IconButton
                         onClick={() => HandleLocation()}
                         color={props.theme.addButton}

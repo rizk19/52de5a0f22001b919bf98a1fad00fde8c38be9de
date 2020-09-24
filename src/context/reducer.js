@@ -35,6 +35,7 @@ export default (state, action) => {
     case SET_DETAIL_LOCATION:
       return {
         ...state,
+        location: false,
         locationItem: action.payload,
       };
     case SET_CART:
