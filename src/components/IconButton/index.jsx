@@ -1,28 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 
-const IconButton = ({ color, icon, size, hover, padding, ...rest }) => {
-    const StyledButton = styled.a`
-        width:  ${props => size ? props.theme.spacing[size] : props.theme.spacing[2]}; /* Preferred icon size */
-        height:  ${props => size ? props.theme.spacing[size] : props.theme.spacing[2]}; /* Preferred icon size */
+const StyledButton = styled.a`
+        width:  ${props => props.size ? props.theme.spacing[props.size] : props.theme.spacing[2]}; /* Preferred icon size */
+        height:  ${props => props.size ? props.theme.spacing[props.size] : props.theme.spacing[2]}; /* Preferred icon size */
         display: flex;
-        padding-top: ${props => props.theme.spacing[padding ? padding : 0]};
-        padding-right: ${props => props.theme.spacing[padding ? padding : 0]};
-        padding-bottom: ${props => props.theme.spacing[padding ? padding : 0]};
+        padding: ${props => props.allpadding && props.theme.spacing[props.allpadding ? props.allpadding : 0]};
+        padding-top: ${props => props.padding && props.theme.spacing[props.padding ? props.padding : 0]};
+        padding-right: ${props => props.padding && props.theme.spacing[props.padding ? props.padding : 0]};
+        padding-bottom: ${props => props.padding && props.theme.spacing[props.padding ? props.padding : 0]};
         cursor: pointer;
         border-radius: 50%;
         transition: background-color 0.15s linear;
+        background-color: ${props => props.outline ? props.theme.background : null};
         &:hover {
-            background-color: ${props => hover ? props.theme.outline : null};
+            background-color: ${props => props.hover ? props.theme.outline : null};
         };
     `
 
-    const StyledIcon = styled.i`
-        color: ${color};
+const StyledIcon = styled.i`
+        color: ${props => props.color ? props.color : "black"};
         font-family: "Material Icons";
         font-weight: normal;
         font-style: normal;
-        font-size:  ${props => size ? props.theme.spacing[size] : props.theme.spacing[2]}; /* Preferred icon size */
+        font-size:  ${props => props.size ? props.theme.spacing[props.size] : props.theme.spacing[2]}; /* Preferred icon size */
         display: inline-block;
         line-height: 1;
         text-transform: none;
@@ -46,20 +47,31 @@ const IconButton = ({ color, icon, size, hover, padding, ...rest }) => {
         border: 0;
         
         &:hover {
-            color: ${props => hover ? props.theme.addButton : null};
-        }
+            color: ${props => props.hover ? props.theme.addButton : null};
+        };
         &:focus {
             outline: none;
-        }
+        };
         &:active {
             outline: none;
             color: black;
             color: ${props => props.theme.cartButton};
-        }
+        };
     `
+const StyledTitleButton = styled.p`
+        margin: 0;
+        font-size:  ${props => props.textsize ? props.theme.spacing[props.textsize] : props.theme.spacing[2]}; /* Preferred icon textsize */
+        padding: 0px;
+        font-weight: 700;
+        color: ${props => props.color ? props.color : "black"};
+    `
+
+const IconButton = ({ color, icon, size, textsize, hover, padding, children, outline, allpadding, ...rest }) => {
+
     return (
-        <StyledButton {...rest}>
-            <StyledIcon>{icon}</StyledIcon>
+        <StyledButton size={size} hover={hover} outline={outline} padding={padding} allpadding={allpadding} {...rest}>
+            {children && <StyledTitleButton textsize={textsize} color={color} {...rest}>{children}</StyledTitleButton>}
+            <StyledIcon color={color} size={size} hover={hover} {...rest}>{icon}</StyledIcon>
         </StyledButton>
     )
 

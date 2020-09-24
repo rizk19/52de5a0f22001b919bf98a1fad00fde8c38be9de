@@ -1,0 +1,26 @@
+.btn {
+  cursor: pointer;
+  width: 50%;
+  height: 60%;
+  border: 0;
+  &:active {
+    outline: none;
+    border: 0;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    cursor: unset;
+  }
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}

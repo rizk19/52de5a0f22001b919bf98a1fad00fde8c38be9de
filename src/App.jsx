@@ -1,9 +1,10 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { theme, Divider } from "./assets/css/App.css";
+import { theme } from "./assets/css/App.css";
 import { Container } from "./layouts";
-import { Navbar } from "./views";
+import { Navbar, Content } from "./views";
 import DataState from "./context/State";
+import 'moment/locale/id';
 
 function App() {
   return (
@@ -11,10 +12,10 @@ function App() {
       <DataState>
         <Container>
           <Navbar theme={theme} />
-          <Divider />
+          <Content theme={theme} />
         </Container>
       </DataState>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }
 

@@ -7,6 +7,7 @@ const Container = ({ children }) => {
         flex-direction: column;
         width: 370px;
         margin: auto;
+        position: relative;
     `;
 
     return (

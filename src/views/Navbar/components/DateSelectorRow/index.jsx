@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import moment from 'moment';
-import 'moment/locale/id';
+
 import DataContext from "../../../../context/Context";
 import { DateTypography, DayTypography, RoundDateButton, StyledDateRows } from "./styles";
 

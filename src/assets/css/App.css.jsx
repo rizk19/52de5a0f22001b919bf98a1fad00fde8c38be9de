@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 export const theme = {
   white: "#FFF",
   black: "#000",
@@ -19,11 +17,13 @@ export const theme = {
     "0px",
     "4px",
     "8px",
+    "12px",
     "16px",
+    "20px",
     "24px",
     "32px",
     "40px",
-    "2rem",
+    "48px",
     "3rem",
     "4rem",
     "6rem",
@@ -33,8 +33,3 @@ export const theme = {
     "24rem",
   ],
 };
-
-export const Divider = styled.hr`
-    width: 100%;
-    border-top: 0.2px solid ${props => props.theme.outline};
-`;
